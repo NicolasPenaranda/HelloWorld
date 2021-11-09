@@ -11,8 +11,9 @@
         android:theme="@style/Theme.HelloWorld">
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter> <!-- indica que se abre esta actividad -->
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
