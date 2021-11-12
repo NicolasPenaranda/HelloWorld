@@ -5,4 +5,6 @@
     <string name="poderes_superman">Super fuerza, vuelo, invulnerabilidad, super velocidad, visión con calor, congelar, visión rayos x"</string>
     <string name="nombre">Nombre:</string>
     <string name="poderes">Poderes:</string>
+    <string name="registro">Registro de un Superhéroe</string>
+    <string name="registrar">Registrar</string>
 </resources>
