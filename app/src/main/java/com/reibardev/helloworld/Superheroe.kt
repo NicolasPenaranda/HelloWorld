@@ -1,9 +1,10 @@
 package com.reibardev.helloworld
 
 data class Superheroe(
-    val nombre: String,
-    val estatura: Float,
-    val poderes: String,
-    val ciudadNacimiento: String,
-    val genero: String
+    val name: String,
+    val powers: String,
+    val alias: String,
+    val city: String,
+    val facebook: String,
+    val occupation: String
 )
