@@ -1,4 +1,4 @@
-package com.reibardev.helloworld
+package com.reibardev.helloworld.list
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,10 +7,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.reibardev.helloworld.R
+import com.reibardev.helloworld.model.SuperheroeItem
 import com.squareup.picasso.Picasso
 
 class SuperHeroesAdapter(
-    private val superheroesList: ArrayList<SuperheroeItem>
+    private val superheroesList: ArrayList<SuperheroeItem>,
+    private val onItemClicked: (SuperheroeItem) -> Unit
 ) : RecyclerView.Adapter<SuperHeroesAdapter.SuperheroeViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SuperheroeViewHolder {
@@ -20,6 +23,7 @@ class SuperHeroesAdapter(
 
     override fun onBindViewHolder(holder: SuperheroeViewHolder, position: Int) {
         val superheroe = superheroesList[position]
+        holder.itemView.setOnClickListener { onItemClicked(superheroesList[position]) }
         holder.bind(superheroe)
         }
 

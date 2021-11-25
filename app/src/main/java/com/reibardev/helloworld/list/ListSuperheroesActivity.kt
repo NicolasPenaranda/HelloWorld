@@ -1,11 +1,16 @@
-package com.reibardev.helloworld
+package com.reibardev.helloworld.list
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
+import com.reibardev.helloworld.R
+import com.reibardev.helloworld.detalle.DetalleActivity
+import com.reibardev.helloworld.model.Superheroe
+import com.reibardev.helloworld.model.SuperheroeItem
 
 class ListSuperheroesActivity : AppCompatActivity() {
 
@@ -21,13 +26,19 @@ class ListSuperheroesActivity : AppCompatActivity() {
 
     //    listSuperheroes = createMockSuperHeroes()
         listSuperheroes = loadMockSuperHeroesFromJson()
-        superHeroesAdapter = SuperHeroesAdapter(listSuperheroes)
+        superHeroesAdapter = SuperHeroesAdapter(listSuperheroes, onItemClicked = { onSupeheroeClicked(it) })
 
         superHeroesRecycleView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = superHeroesAdapter
             setHasFixedSize(false)
         }
+    }
+
+    private fun onSupeheroeClicked(superheroe: SuperheroeItem) {
+        val intent = Intent(this, DetalleActivity::class.java)
+        intent.putExtra("superheroe", superheroe)
+        startActivity(intent)
     }
 
     private fun loadMockSuperHeroesFromJson(): ArrayList<SuperheroeItem> {

@@ -1,7 +1,8 @@
-package com.reibardev.helloworld
+package com.reibardev.helloworld.model
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class SuperheroeItem(
     @SerializedName("alias")
@@ -10,6 +11,8 @@ data class SuperheroeItem(
     val city: String,
     @SerializedName("facebook")
     val facebook: String,
+    @SerializedName("height")
+    val height: Double,
     @SerializedName("name")
     val name: String,
     @SerializedName("occupation")
@@ -18,4 +21,4 @@ data class SuperheroeItem(
     val powers: String,
     @SerializedName("urlPicture")
     val urlPicture: String
-)
+) : Serializable

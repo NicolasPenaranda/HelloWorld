@@ -1,4 +1,4 @@
-package com.reibardev.helloworld
+package com.reibardev.helloworld.registro
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import com.google.android.material.textfield.TextInputEditText
+import com.reibardev.helloworld.detalle.DetalleActivity
+import com.reibardev.helloworld.R
 
 class RegistroSuperheroeActivity : AppCompatActivity() {
 
@@ -40,7 +42,9 @@ class RegistroSuperheroeActivity : AppCompatActivity() {
                 val ciudadNacimiento = ciudadNacimientoSpinner.selectedItem.toString()
 
                 val genero: String =
-                    if (masculinoRadioButton.isChecked) getString(R.string.masculino) else getString(R.string.femenino)
+                    if (masculinoRadioButton.isChecked) getString(R.string.masculino) else getString(
+                        R.string.femenino
+                    )
 
                 if (fuerzaCheckBox.isChecked) poderes = getString(R.string.super_fuerza)
                 if (velocidadCheckBox.isChecked) poderes =
@@ -53,7 +57,7 @@ class RegistroSuperheroeActivity : AppCompatActivity() {
 
                 //val superheroe = Superheroe(nombre, estatura, poderes, ciudadNacimiento, genero)
 
-                val intent = Intent(this,MainActivity::class.java)
+                val intent = Intent(this, DetalleActivity::class.java)
                 intent.putExtra("nombre", nombre)
                 startActivity(intent)
             }
