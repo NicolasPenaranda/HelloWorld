@@ -31,4 +31,13 @@
         <item name="android:textColor">@color/purple_700</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="Theme.HelloWorld.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.HelloWorld.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.HelloWorld.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
